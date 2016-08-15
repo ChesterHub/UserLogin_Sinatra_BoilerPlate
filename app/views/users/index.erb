@@ -1,0 +1,17 @@
+<h1>Users/index</h1>
+
+<% if current_user %>
+  <a href="/users/profile">Click here to go to Profile Page</a>
+  <form action="/sessions" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Logout">
+  </form>
+<% else %>
+  <a href="/users/new">New User? Register Here</a>
+  <form action="/sessions" method="POST">
+    Email: <input type="text" name="email" placeholder="Email"><br>
+    Password: <input type="password" name="password" placeholder="Password"><br>
+    <input type="submit" value="Login">
+  </form>
+<% end %>
+
